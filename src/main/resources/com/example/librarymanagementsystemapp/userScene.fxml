@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystemapp.UserSceneController">
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane prefHeight="45.0" prefWidth="1102.0" styleClass="semi-top-form" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutX="158.0" layoutY="-77.0" prefHeight="33.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@application.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <FontAwesomeIcon glyphName="BOOK" layoutX="6.0" layoutY="23.0" size="1.5em" text="" />
+                                        <Label layoutX="29.0" layoutY="6.0" text="Library Management System">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <Button layoutX="1247.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="50.0" styleClass="close" stylesheets="@application.css">
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="CLOSE" onDragDetected="#close" text="" />
+                                            </graphic>
+                                        </Button>
+                                        <Button layoutX="1196.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="50.0" styleClass="minimize" stylesheets="@application.css">
+                                            <graphic>
+                                                <FontAwesomeIcon glyphName="MINUS" />
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <left>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane layoutY="90.0" prefHeight="554.4" prefWidth="200.0" styleClass="nav-form" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <Line endX="100.0" layoutX="84.0" layoutY="186.0" startX="-66.40000915527344" startY="-1.52587890625E-5" stroke="WHITE" />
+                                        <Button fx:id="home_button" layoutX="10.0" layoutY="222.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="start-home-btn" stylesheets="@application.css" text="Home">
+                                            <graphic>
+                                                <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Image/home.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <font>
+                                                <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                                            </font>
+                                        </Button>
+                                        <Button layoutX="32.0" layoutY="606.0" mnemonicParsing="false" onAction="#logout" stylesheets="@application.css">
+                                            <graphic>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" text="" />
+                                            </graphic>
+                                            <styleClass>
+                                                <String fx:value="logout-btn" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                        </Button>
+                                        <Label layoutX="85.0" layoutY="613.0" text="Logout" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                              <Button fx:id="myDocument_button" layoutX="10.0" layoutY="259.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="My Document">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/books.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="profile_button" layoutX="10.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="Profile">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/user.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <VBox alignment="CENTER" layoutX="16.0" layoutY="14.0" prefHeight="166.0" prefWidth="169.0">
+                                 <children>
+                                    <ImageView fx:id="welcomeImageUser" fitHeight="110.0" fitWidth="110.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@Image/profile-user.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="214.0" text="Welcome," textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="welcomeUserName" alignment="CENTER" prefHeight="27.0" prefWidth="217.0" text="Label" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                    <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" prefHeight="654.4" prefWidth="1100.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox prefHeight="654.4" prefWidth="1100.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane prefHeight="70.0" prefWidth="1101.0">
+                                       <children>
+                                          <TextField fx:id="searchDocument" layoutX="36.0" layoutY="21.0" prefHeight="28.0" prefWidth="165.0" promptText="Search" styleClass="search" stylesheets="@application.css" />
+                                          <Button fx:id="searchDocument_button" layoutX="220.0" layoutY="21.0" mnemonicParsing="false" onAction="#setSearchDocumentButton" prefHeight="28.0" prefWidth="30.0">
+                                             <graphic>
+                                                <FontAwesomeIcon glyphName="SEARCH" />
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="623.0" prefWidth="1101.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" text="Recently Added">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ScrollPane layoutX="14.0" layoutY="44.0" prefHeight="183.0" prefWidth="1072.0" styleClass="transparent" stylesheets="@application.css">
+                                             <content>
+                                                <HBox fx:id="cardLayOut" prefHeight="166.0" prefWidth="1403.0" styleClass="transparent" stylesheets="@application.css" />
+                                             </content>
+                                          </ScrollPane>
+                                          <Label layoutX="14.0" layoutY="234.0" text="Recommended for you">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ScrollPane layoutX="14.0" layoutY="266.0" prefHeight="332.0" prefWidth="1072.0">
+                                             <content>
+                                                <GridPane fx:id="documentContainer" prefHeight="0.0" prefWidth="0.0">
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="myDocument_form" layoutX="12.8" layoutY="14.0" prefHeight="654.4" prefWidth="1100.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="myDocument_table" layoutX="48.0" layoutY="25.0" prefHeight="603.0" prefWidth="1004.0" stylesheets="@application.css">
+                                <columns>
+                                  <TableColumn fx:id="myDocument_id" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="myDocument_name" prefWidth="196.79995727539062" text="Document Name" />
+                                    <TableColumn fx:id="myDocument_author" prefWidth="179.20001220703125" text="Author" />
+                                    <TableColumn fx:id="myDocument_genre" prefWidth="176.0" text="Genre" />
+                                    <TableColumn fx:id="myDocument_borrowDate" prefWidth="146.39996337890625" text="Borrow Date" />
+                                    <TableColumn fx:id="myDocument_dueDate" prefWidth="140.00006103515625" text="Due Date" />
+                                    <TableColumn fx:id="myDocument_action" prefWidth="90.4000244140625" text="Action" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="profile_form" prefHeight="654.4" prefWidth="1100.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="48.0" layoutY="25.0" prefHeight="603.0" prefWidth="1004.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <ImageView fitHeight="172.0" fitWidth="201.0" layoutX="212.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" />
+                                    <AnchorPane layoutX="191.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@application.css">
+                                       <children>
+                                          <ImageView fx:id="profile_imageUser" fitHeight="170.0" fitWidth="170.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true">
+                                             <image>
+                                                <Image url="@Image/profile-user.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                    <Button fx:id="profile_importButton" layoutX="245.0" layoutY="234.0" mnemonicParsing="false" onAction="#setImportButton" prefHeight="36.0" prefWidth="91.0" styleClass="clear-btn" text="Import" />
+                                    <Label layoutX="114.0" layoutY="281.0" text="User name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_userName" editable="false" layoutX="191.0" layoutY="278.0" prefHeight="26.0" prefWidth="203.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="113.0" layoutY="321.0" text="First Name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_firstName" layoutX="191.0" layoutY="318.0" prefHeight="26.0" prefWidth="203.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="114.0" layoutY="361.0" text="Last Name:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_lastName" layoutX="191.0" layoutY="358.0" prefHeight="26.0" prefWidth="203.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="143.0" layoutY="441.0" text="Gmail:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_gmail" layoutX="190.0" layoutY="438.0" prefHeight="26.0" prefWidth="203.0" promptText="Add you gmail" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="141.0" layoutY="478.0" text="Phone:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="profile_phone" layoutX="189.0" layoutY="478.0" prefHeight="26.0" prefWidth="203.0" promptText="Add your mobile number" styleClass="textfield" stylesheets="@application.css" />
+                                    <Button fx:id="profile_updateButton" layoutX="231.0" layoutY="531.0" mnemonicParsing="false" onAction="#setUpdateButton" prefHeight="48.0" prefWidth="118.0" styleClass="clear-btn" stylesheets="@application.css" text="Update" />
+                                    <Line endX="-37.00006103515625" endY="514.0000610351562" layoutX="582.0" layoutY="74.0" startX="-37.00006103515625" startY="-54.00000762939453" />
+                                    <Label layoutX="132.0" layoutY="401.0" text="Gender:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="profile_gender" layoutX="190.0" layoutY="398.0" prefHeight="26.0" prefWidth="203.0" promptText="Choose..." stylesheets="@application.css" />
+                                    <Label layoutX="657.0" layoutY="124.0" text="Change Your Password">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="643.0" layoutY="216.0" />
+                                    <Label layoutX="609.0" layoutY="224.0" text="Current Password:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField fx:id="profile_currentPassword" layoutX="732.0" layoutY="222.0" prefHeight="26.0" prefWidth="174.0" promptText="Enter current password" styleClass="text-field" stylesheets="@application.css" />
+                                    <Label layoutX="627.0" layoutY="281.0" text="New Password:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField fx:id="profile_newPassword" layoutX="732.0" layoutY="278.0" prefHeight="26.0" prefWidth="174.0" promptText="Enter new password" styleClass="text-field" stylesheets="@application.css" />
+                                    <Label layoutX="570.0" layoutY="337.0" text="Confirm New Password:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField fx:id="profile_confirmPassword" layoutX="732.0" layoutY="334.0" prefHeight="26.0" prefWidth="174.0" promptText="Confirm new password" styleClass="text-field" stylesheets="@application.css" />
+                                    <Button layoutX="724.0" layoutY="400.0" mnemonicParsing="false" onAction="#changePassWord" prefHeight="48.0" prefWidth="118.0" styleClass="clear-btn" stylesheets="@application.css" text="Change" />
+                                    <Label fx:id="labelWrongPassword" layoutX="735.0" layoutY="252.0" text="*Wrong current password!" textFill="RED" visible="false" />
+                                    <Label fx:id="labelWrongConfirm" layoutX="570.0" layoutY="372.0" text="*The new password and confirmation password do not match. Please try again." textFill="RED" visible="false" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

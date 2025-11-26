@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystemapp.DocumentDetails2Controller">
+   <children>
+      <ImageView fx:id="documentImage" fitHeight="230.0" fitWidth="162.0" layoutX="102.0" layoutY="35.0" pickOnBounds="true">
+         <image>
+            <Image url="@Image/crimeandpunishment.jpg" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="14.0" layoutY="274.0" prefHeight="112.0" prefWidth="337.0">
+         <children>
+            <Label fx:id="documentTitle" prefHeight="41.0" prefWidth="338.0" text="Crime and punishment">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="documentAuthor" prefHeight="36.0" prefWidth="338.0" text="Tac gia">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="documentGenre" prefHeight="36.0" prefWidth="338.0" text="The loai">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Line endX="-2.20001220703125" endY="346.20001220703125" layoutX="375.0" layoutY="121.0" startX="-2.20001220703125" startY="-106.60000610351562" />
+      <TextField fx:id="comment" alignment="TOP_LEFT" layoutX="396.0" layoutY="407.0" prefHeight="54.0" prefWidth="242.0" />
+      <Button fx:id="borrowButton" layoutX="298.0" layoutY="491.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="147.0" styleClass="update-btn" stylesheets="@application.css" text="Borrow" />
+      <ScrollPane layoutX="396.0" layoutY="35.0" prefHeight="330.0" prefWidth="330.0">
+         <content>
+            <GridPane fx:id="commentContainer" prefHeight="2.0" prefWidth="0.0">
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content></ScrollPane>
+      <Label layoutX="24.0" layoutY="413.0" text="Borrow Date:" />
+      <TextField fx:id="borrowDate" editable="false" layoutX="108.0" layoutY="409.0" />
+      <DatePicker fx:id="dueDate" layoutX="105.0" layoutY="445.0" />
+      <Label layoutX="40.0" layoutY="449.0" text="Due Date:" />
+      <Button fx:id="sendCommentButton" layoutX="645.0" layoutY="417.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Send Comment" />
+   </children>
+</AnchorPane>

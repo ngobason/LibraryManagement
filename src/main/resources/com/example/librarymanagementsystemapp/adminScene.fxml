@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystemapp.adminSceneController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="45.0" prefWidth="1102.0" styleClass="semi-top-form" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="158.0" layoutY="-77.0" prefHeight="33.0" prefWidth="1100.0" styleClass="top-form" stylesheets="@application.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon glyphName="BOOK" layoutX="6.0" layoutY="23.0" size="1.5em" text="" />
+                              <Label layoutX="29.0" layoutY="6.0" text="Library Management System">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="1048.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="50.0" styleClass="close" stylesheets="@application.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="CLOSE" onDragDetected="#close" text="" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="997.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="50.0" styleClass="minimize" stylesheets="@application.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="MINUS" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="90.0" prefHeight="554.4" prefWidth="200.0" styleClass="nav-form" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="67.0" layoutY="112.0" size="7em" text="" />
+                              <Label layoutX="71.0" layoutY="124.0" text="Welcome," textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="64.0" layoutY="144.0" text="Manager" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="84.0" layoutY="186.0" startX="-66.40000915527344" startY="-1.52587890625E-5" stroke="WHITE" />
+                              <Button fx:id="home_button" layoutX="10.0" layoutY="222.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="start-home-btn" stylesheets="@application.css" text="Home">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/home.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="manageDocument_button" layoutX="11.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" onKeyReleased="#searchDocument" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="Manage Documents">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/book.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="manageUsers_button" layoutX="12.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="Manage Users">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/group.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="515.0" mnemonicParsing="false" onAction="#logout" stylesheets="@application.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout-btn" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="67.0" layoutY="520.0" text="Logout" textFill="WHITE">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="viewRecords_button" layoutX="11.0" layoutY="407.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="View Records">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/criminal-record.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="addDocument_button" layoutX="10.0" layoutY="259.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="Add Documents">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/add-post.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="approvalRequest_button" layoutX="10.0" layoutY="333.0" mnemonicParsing="false" onAction="#switchForm" onKeyReleased="#searchDocument" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@application.css" text="Approval Request">
+                                 <graphic>
+                                    <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Image/criminal-record.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" prefHeight="554.4" prefWidth="901.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="15.0" layoutY="10.0" prefHeight="171.0" prefWidth="870.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="14.0" layoutY="15.0" prefHeight="143.0" prefWidth="252.0" styleClass="home-bg-top">
+                                       <children>
+                                          <ImageView fitHeight="86.0" fitWidth="73.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Image/book3.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="43.0" layoutY="102.0" text="Available Documents" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="availableDocuments_home" layoutX="223.0" layoutY="14.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="303.0" layoutY="15.0" prefHeight="143.0" prefWidth="252.0" styleClass="home-bg-top">
+                                       <children>
+                                          <ImageView fitHeight="86.0" fitWidth="73.0" layoutX="8.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Image/book-donation.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="57.0" layoutY="103.0" text="Issued Documents" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="issuedDocument_home" layoutX="223.0" layoutY="14.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="595.0" layoutY="15.0" prefHeight="143.0" prefWidth="252.0" styleClass="home-bg-top">
+                                       <children>
+                                          <ImageView fitHeight="86.0" fitWidth="73.0" layoutX="6.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Image/teamwork.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="84.0" layoutY="103.0" text="Total Users" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="totalUsers_home" layoutX="223.0" layoutY="14.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="15.0" layoutY="200.0" prefHeight="340.0" prefWidth="870.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <PieChart fx:id="home_pieChart" prefHeight="342.0" prefWidth="344.0" />
+                                    <Label layoutX="127.0" layoutY="4.0" text="Return Status">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <BarChart fx:id="barChart" layoutX="349.0" prefHeight="342.0" prefWidth="522.0" title="Borrowing by Genre">
+                                      <xAxis>
+                                        <CategoryAxis label="Number of Borrows" side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis label="Genre" side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="addDocument_form" prefHeight="554.4" prefWidth="901.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="18.0" prefHeight="517.0" prefWidth="878.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="searchDocument" layoutX="40.0" layoutY="14.0" prefHeight="30.0" prefWidth="200.0" promptText="Search" styleClass="search" stylesheets="@application.css" />
+                                    <Button layoutX="251.0" layoutY="14.0" mnemonicParsing="false" onAction="#search_GoogleAPI" prefHeight="30.0" prefWidth="30.0">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="SEARCH" />
+                                       </graphic>
+                                    </Button>
+                                    <ScrollPane layoutX="15.0" layoutY="57.0" prefHeight="438.0" prefWidth="848.0">
+                                       <content>
+                                          <GridPane fx:id="documentContainer2">
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="manageDocument_form" prefHeight="554.4" prefWidth="901.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="10.0" layoutY="17.0" prefHeight="525.0" prefWidth="881.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="21.0" layoutY="35.0" prefHeight="477.0" prefWidth="250.0" stylesheets="@application.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutX="56.0" layoutY="14.0" prefHeight="171.0" prefWidth="140.0">
+                                             <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                             <children>
+                                                <ImageView fx:id="manage_image" fitHeight="171.0" fitWidth="140.0" pickOnBounds="true" />
+                                             </children>
+                                          </AnchorPane>
+                                          <Label layoutX="29.0" layoutY="231.0" text="Title:">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="manage_title" layoutX="65.0" layoutY="228.0" styleClass="textfield" />
+                                          <Label layoutX="15.0" layoutY="263.0" text="Author:">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="manage_author" layoutX="65.0" layoutY="260.0" styleClass="textfield" />
+                                          <Label layoutX="23.0" layoutY="299.0" text="Genre:">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="manage_genre" layoutX="65.0" layoutY="296.0" styleClass="textfield" />
+                                          <Label layoutX="7.0" layoutY="339.0" text="Quantity:">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="manage_quantity" layoutX="65.0" layoutY="335.0" styleClass="textfield" />
+                                          <Label layoutX="35.0" layoutY="196.0" text="ID:">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="manage_id" layoutX="65.0" layoutY="193.0" styleClass="textfield" />
+                                          <Button layoutX="14.0" layoutY="422.0" mnemonicParsing="false" onAction="#deleteDocument" prefHeight="41.0" prefWidth="102.0" styleClass="delete-btn" stylesheets="@application.css" text="Delete" />
+                                          <Button layoutX="74.0" layoutY="372.0" mnemonicParsing="false" onAction="#manage_clearButton" prefHeight="41.0" prefWidth="102.0" styleClass="clear-btn" stylesheets="@application.css" text="Clear" />
+                                          <Button layoutX="125.0" layoutY="422.0" mnemonicParsing="false" onAction="#updateDocument" prefHeight="41.0" prefWidth="102.0" styleClass="update-btn" stylesheets="@application.css" text="Update" />
+                                       </children>
+                                    </AnchorPane>
+                                    <TableView fx:id="manage_table" layoutX="299.0" layoutY="53.0" prefHeight="458.0" prefWidth="560.0">
+                                      <columns>
+                                        <TableColumn fx:id="id_column" prefWidth="56.79998779296875" text="ID" />
+                                        <TableColumn fx:id="title_column" prefWidth="164.0" text="Title" />
+                                          <TableColumn fx:id="author_column" prefWidth="122.4000244140625" text="Author" />
+                                          <TableColumn fx:id="genre_column" prefWidth="133.5999755859375" text="Genre" />
+                                          <TableColumn fx:id="quantity_column" prefWidth="79.99993896484375" text="Quantity" />
+                                      </columns>
+                                    </TableView>
+                                    <TextField fx:id="manage_search" layoutX="433.0" layoutY="14.0" onAction="#searchDocument" prefHeight="27.0" prefWidth="186.0" styleClass="search2" stylesheets="@application.css" />
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="441.0" layoutY="34.0" size="1.5em" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="approvalRequest_form" layoutX="173.0" layoutY="65.0" prefHeight="554.4" prefWidth="901.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="27.0" layoutY="27.0" prefHeight="499.0" prefWidth="848.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="request_table" editable="true" layoutX="22.0" layoutY="24.0" prefHeight="389.0" prefWidth="803.0">
+                                      <columns>
+                                        <TableColumn fx:id="request_idColumn" prefWidth="72.79997253417969" text="Id" />
+                                        <TableColumn fx:id="request_documentName" prefWidth="180.79998779296875" text="Document Name" />
+                                          <TableColumn fx:id="request_borrowerName" prefWidth="164.00003051757812" text="Borrower Name" />
+                                          <TableColumn fx:id="request_borrowDate" prefWidth="110.4000244140625" text="Borrow Date" />
+                                          <TableColumn fx:id="request_dueDate" prefWidth="104.0" text="Due Date" />
+                                          <TableColumn fx:id="request_statusColumn" prefWidth="100.79998779296875" text="Status" />
+                                          <TableColumn fx:id="request_selectColumn" prefWidth="69.60003662109375" text="Select" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="accept_button" layoutX="465.0" layoutY="429.0" mnemonicParsing="false" onAction="#setAcceptButton" prefHeight="46.0" prefWidth="124.0" styleClass="delete-btn" stylesheets="@application.css" text="Accept" />
+                                    <Button fx:id="acceptAll_button" layoutX="300.0" layoutY="429.0" mnemonicParsing="false" onAction="#setAcceptAllButton" prefHeight="46.0" prefWidth="124.0" styleClass="delete-btn" stylesheets="@application.css" text="Accept All" />
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="manageUsers_form" prefHeight="554.4" prefWidth="901.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="27.0" layoutY="27.0" prefHeight="499.0" prefWidth="848.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="users_table" layoutX="35.0" layoutY="53.0" prefHeight="432.0" prefWidth="777.0">
+                                       <columns>
+                                          <TableColumn fx:id="userId_column" prefWidth="63.199981689453125" text="ID" />
+                                          <TableColumn fx:id="userUsername_column" prefWidth="144.00003051757812" text="Username" />
+                                          <TableColumn fx:id="userFullName_column" prefWidth="179.19998168945312" text="Full Name" />
+                                          <TableColumn fx:id="userGender_column" prefWidth="96.79998779296875" text="Gender" />
+                                          <TableColumn fx:id="userPhone_column" prefWidth="143.20001220703125" text="Phone" />
+                                          <TableColumn fx:id="userGmail_column" prefWidth="151.99996337890627" text="Gmail" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="user_search" layoutX="35.0" layoutY="14.0" onAction="#searchUser" prefHeight="27.0" prefWidth="186.0" styleClass="search2" stylesheets="@application.css" />
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="42.0" layoutY="34.0" size="1.5em" />
+                                    <Button fx:id="deleteUser_button" layoutX="795.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="30.0" prefWidth="34.0">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="TRASH" size="1.5em" />
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="viewRecords_form" prefHeight="554.4" prefWidth="901.6" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="allRecords_form" layoutX="23.0" layoutY="47.0" prefHeight="487.0" prefWidth="856.0" stylesheets="@application.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="tableView_viewRecords" layoutX="16.0" layoutY="14.0" prefHeight="459.0" prefWidth="824.0">
+                                      <columns>
+                                        <TableColumn fx:id="idColumn_viewRecords" prefWidth="62.39997863769531" text="ID" />
+                                        <TableColumn fx:id="borrowerName_viewRecords" prefWidth="137.60000610351562" text="Borrower Name" />
+                                          <TableColumn fx:id="documentName_viewRecords" minWidth="7.99993896484375" prefWidth="205.60006713867188" text="Document name" />
+                                          <TableColumn fx:id="borrowDate_ViewRecords" minWidth="0.0" prefWidth="109.5999755859375" text="Borrow Date" />
+                                          <TableColumn fx:id="dueDate_viewRecords" prefWidth="107.20001220703125" text="Due Date" />
+                                          <TableColumn fx:id="status_viewRecords" prefWidth="88.0" text="Status" />
+                                          <TableColumn fx:id="returnDate_viewRecords" prefWidth="120.00006103515625" text="Return Date" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="23.0" layoutY="15.0" prefHeight="32.0" prefWidth="170.0" styleClass="view-records-form" stylesheets="@application.css">
+                                 <children>
+                                    <Button fx:id="allRecords_button" layoutX="2.0" layoutY="3.0" mnemonicParsing="false" onAction="#viewRecordsSwitchForm" prefHeight="26.0" prefWidth="76.0" styleClass="start-allrecords-btn" stylesheets="@application.css" text="All Records" textFill="WHITE" />
+                                    <Button fx:id="defaulterList_button" layoutX="83.0" layoutY="3.0" mnemonicParsing="false" onAction="#viewRecordsSwitchForm" prefHeight="26.0" prefWidth="86.0" styleClass="view-records-btn" stylesheets="@application.css" text="Defaulter List" textFill="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <Button layoutX="857.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteButton_viewRecords" prefHeight="20.0" prefWidth="20.0">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="TRASH" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
