@@ -15,30 +15,30 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 public class RegistrationSceneController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+    public Stage stage;
+    public Scene scene;
+    public Parent root;
 
     @FXML
-    private TextField confirmpasswordField;
+    TextField confirmpasswordField;
 
     @FXML
-    private TextField firstnameField;
+    TextField firstnameField;
 
     @FXML
-    private TextField lastnameField;
+    TextField lastnameField;
 
     @FXML
-    private TextField passwordField;
+    TextField passwordField;
 
     @FXML
-    private TextField usernameField;
+    TextField usernameField;
 
     @FXML
-    private Label confirmpasswordmessage;
+    Label confirmpasswordmessage;
 
     @FXML
-    private AnchorPane main_form;
+    AnchorPane main_form;
 
     public void close() {
         System.exit(0);
