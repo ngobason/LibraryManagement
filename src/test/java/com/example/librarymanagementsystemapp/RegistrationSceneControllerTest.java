@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
-public class RegistrationSceneControllerTest {
+public class RegistrationSceneControllerTest extends JavaFXTestBase {
 
     private RegistrationSceneController controller;
 
@@ -21,7 +21,6 @@ public class RegistrationSceneControllerTest {
     void setUp() {
         controller = new RegistrationSceneController();
 
-        // mock all UI fields
         controller.firstnameField = new TextField();
         controller.lastnameField = new TextField();
         controller.usernameField = new TextField();
@@ -48,14 +47,13 @@ void testPasswordMismatch() throws Exception {
 
     @Test
     void testRegisterUser_SQLExecuted() throws Exception {
-        // Arrange
+
         controller.firstnameField.setText("John");
         controller.lastnameField.setText("Doe");
         controller.usernameField.setText("testuser");
         controller.passwordField.setText("12345");
         controller.confirmpasswordField.setText("12345");
 
-        // Mock Database + Connection + Statement
         Database dbMock = Mockito.mock(Database.class);
         Connection connMock = Mockito.mock(Connection.class);
         Statement stmtMock = Mockito.mock(Statement.class);
@@ -74,10 +72,8 @@ void testPasswordMismatch() throws Exception {
             }
         };
 
-        // Act
         testController.registerUser();
 
-        // Assert
         verify(connMock, times(1)).createStatement();
         verify(stmtMock, times(1)).executeUpdate(anyString());
     }
